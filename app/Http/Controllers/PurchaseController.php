@@ -26,8 +26,11 @@ class PurchaseController extends Controller
             if($appToken=='1234567'){
                 $purchase = new Purchase;
 
+
+                $offeringID = explode('#',$request->offeringID);
+
                 $purchase->customerName = $request->customerName;
-                $purchase->offeringID = $request->offeringID;
+                $purchase->offeringID = $offeringID[0];
                 $purchase->quantity = $request->quantity;
 
                 $errorMessage = '';

@@ -33,6 +33,7 @@
                 <div ng-controller="ExampleController" id="create-form">
                     <h3 class="text-center margin-bottom-30">Create Purchase</h3>
                     <form id="purchase_form" class="form-horizontal">
+			<input type="hidden" name="app_token" value="1234567"/>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Offer</label>
                             <div class="col-sm-10">
@@ -78,7 +79,7 @@
 
 <script>
   angular.module('formExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
+    .controller('ExampleController', function($scope, $http) {
       //$scope.quantity = 0;
       $scope.changeValue = function(){
         var offer_value = $scope.offer.split("#");
@@ -117,7 +118,7 @@
 
         }
 
-    }]);
+    });
 </script>
 
 </body>
